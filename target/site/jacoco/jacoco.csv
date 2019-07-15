@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+TestingExample,com.demo.spring.dao,BookDAOImpl,122,0,2,0,33,0,10,0,9,0
+TestingExample,com.demo.spring.controller,BookController,16,55,1,1,5,17,3,6,2,6
+TestingExample,com.demo.spring.config,AppConfig,123,0,0,0,20,0,3,0,3,0
+TestingExample,com.demo.spring.config,WebConfig,23,0,0,0,19,0,19,0,19,0
+TestingExample,com.demo.spring.config,MyWebAppInitializer,24,0,0,0,4,0,4,0,4,0
+TestingExample,com.demo.spring.service,BookServiceImpl,13,36,1,1,4,9,3,7,2,7
+TestingExample,com.demo.spring.model,Book,13,24,0,0,5,11,1,7,1,7

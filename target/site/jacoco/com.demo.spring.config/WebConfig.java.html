@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TestingExample</a> &gt; <a href="index.source.html" class="el_package">com.demo.spring.config</a> &gt; <span class="el_source">WebConfig.java</span></div><h1>WebConfig.java</h1><pre class="source lang-java linenums">package com.demo.spring.config;
+
+import java.util.List;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.validation.MessageCodesResolver;
+import org.springframework.validation.Validator;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
+import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = { &quot;com.demo.spring.controller&quot; })
+<span class="nc" id="L29">public class WebConfig implements WebMvcConfigurer {</span>
+
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L35">	}</span>
+
+	@Override
+	public void configureMessageConverters(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L41">	}</span>
+
+	@Override
+	public void extendMessageConverters(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L47">	}</span>
+
+	@Override
+	public Validator getValidator() {
+		// TODO Auto-generated method stub
+<span class="nc" id="L52">		return null;</span>
+	}
+
+	@Override
+	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L59">	}</span>
+
+	@Override
+	public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L65">	}</span>
+
+	@Override
+	public void configurePathMatch(PathMatchConfigurer configurer) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L71">	}</span>
+
+	@Override
+	public void addArgumentResolvers(List&lt;HandlerMethodArgumentResolver&gt; argumentResolvers) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L77">	}</span>
+
+	@Override
+	public void addReturnValueHandlers(List&lt;HandlerMethodReturnValueHandler&gt; returnValueHandlers) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L83">	}</span>
+
+	@Override
+	public void configureHandlerExceptionResolvers(List&lt;HandlerExceptionResolver&gt; exceptionResolvers) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L89">	}</span>
+
+	@Override
+	public void extendHandlerExceptionResolvers(List&lt;HandlerExceptionResolver&gt; exceptionResolvers) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L95">	}</span>
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L101">	}</span>
+
+	@Override
+	public MessageCodesResolver getMessageCodesResolver() {
+		// TODO Auto-generated method stub
+<span class="nc" id="L106">		return null;</span>
+	}
+
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L113">	}</span>
+
+	@Override
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L119">	}</span>
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L125">	}</span>
+
+	@Override
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L131">	}</span>
+
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		// TODO Auto-generated method stub
+		
+<span class="nc" id="L137">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

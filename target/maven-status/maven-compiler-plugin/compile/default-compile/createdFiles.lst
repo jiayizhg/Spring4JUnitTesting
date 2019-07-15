@@ -1,0 +1,9 @@
+com\demo\spring\config\WebConfig.class
+com\demo\spring\config\MyWebAppInitializer.class
+com\demo\spring\controller\BookController.class
+com\demo\spring\dao\BookDAO.class
+com\demo\spring\service\BookServiceImpl.class
+com\demo\spring\service\BookService.class
+com\demo\spring\dao\BookDAOImpl.class
+com\demo\spring\model\Book.class
+com\demo\spring\config\AppConfig.class

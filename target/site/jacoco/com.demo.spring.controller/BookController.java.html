@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TestingExample</a> &gt; <a href="index.source.html" class="el_package">com.demo.spring.controller</a> &gt; <span class="el_source">BookController.java</span></div><h1>BookController.java</h1><pre class="source lang-java linenums">package com.demo.spring.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.demo.spring.model.Book;
+import com.demo.spring.service.BookService;
+
+@CrossOrigin(&quot;*&quot;)
+@RestController
+public class BookController {
+	
+	private BookService bookService;
+	
+	@Autowired
+<span class="fc" id="L24">	public BookController(BookService bookService) {</span>
+<span class="fc" id="L25">		this.bookService = bookService;</span>
+<span class="fc" id="L26">	}</span>
+	
+	// Get all books
+	@RequestMapping(value = &quot;/api/book&quot;, method = RequestMethod.GET)
+	public List&lt;Book&gt; list() {
+<span class="fc" id="L31">		List&lt;Book&gt; books = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L32">		books = bookService.list();</span>
+		
+<span class="fc" id="L34">		return books;</span>
+	}
+
+	// Add a new book
+	// Returns the id of the book if added successfully
+	// Return -1 if failed adding a new book
+	@RequestMapping(value = &quot;/api/book&quot;, method = RequestMethod.POST)
+	public long save(@RequestBody Book book) {
+		
+<span class="fc" id="L43">		long id = -1;</span>
+<span class="fc" id="L44">		id = bookService.save(book);</span>
+		
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">		if (id &lt; 0)</span>
+<span class="nc" id="L47">			return -1;</span>
+		
+<span class="fc" id="L49">		return id;</span>
+	}
+	
+	// Add a new book record and return the object
+	@RequestMapping(value = &quot;/api/book/newBook&quot;, method = RequestMethod.POST)
+	public Book addAndReturnNewRecord(@RequestBody Book book) {
+					
+<span class="fc" id="L56">		Book newBook = new Book();</span>
+		
+<span class="fc" id="L58">		newBook = bookService.addAndReturnNewRecord(book);</span>
+		
+<span class="fc" id="L60">		return newBook;</span>
+	}
+	
+	// Get a book by id
+	@RequestMapping(value = &quot;/api/book/{id}&quot;, method = RequestMethod.GET)
+	public Book get(@PathVariable(&quot;id&quot;) long id) {
+<span class="fc" id="L66">		Book book = bookService.get(id);</span>
+<span class="fc" id="L67">		return book;</span>
+	}
+	
+	// Get a book by id and author
+	@RequestMapping(value = &quot;/api/book/{id}/{author}&quot;, method = RequestMethod.GET)
+	public Book getByIDAndAuthor(@PathVariable(&quot;id&quot;) long id, @PathVariable(&quot;author&quot;) String author) {
+<span class="nc" id="L73">		Book book = bookService.getByIDAndAuthor(id, author);</span>
+<span class="nc" id="L74">		return book;</span>
+	}
+	
+	// Update a book record by id
+	@RequestMapping(value = &quot;/api/book/{id}&quot;, method = RequestMethod.PUT)
+	public long update(@PathVariable(&quot;id&quot;) long id, @RequestBody Book book) {
+<span class="fc" id="L80">		bookService.update(id, book);</span>
+<span class="fc" id="L81">		return 0;</span>
+	}
+	
+	// Delete a book record by id
+	@RequestMapping(value = &quot;/api/book/{id}&quot;, method = RequestMethod.DELETE)
+	public long delete(@PathVariable(&quot;id&quot;) long id) {
+<span class="nc" id="L87">		bookService.delete(id);</span>
+<span class="nc" id="L88">		return 0;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
