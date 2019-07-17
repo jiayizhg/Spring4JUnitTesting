@@ -1,6 +1,8 @@
 # Spring4JUnitTesting
 A Spring 4 MVC application for task management | Unit testing with JUnit and Mockito
 
+## Preview of the Full Source Code
+
 ## Automated Unit Testing
 * Frameworks used
   * Spring MVC Test Framework
