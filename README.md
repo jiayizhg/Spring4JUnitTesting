@@ -1,6 +1,6 @@
 # Spring4JUnitTesting
 * A Maven + Spring 4 +  Hibernate + MySql application for task management 
-* Implement unit testing with JUnit 5 and Mockito
+* Implemented unit testing with JUnit 5 and Mockito
 
 Table of Contents
 =================
