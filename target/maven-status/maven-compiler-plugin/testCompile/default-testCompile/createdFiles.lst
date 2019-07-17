@@ -1,2 +1,2 @@
-com\demo\spring\controller\BookControllerTest.class
-com\demo\spring\service\BookServiceTest.class
+com\demo\spring\controller\TaskControllerTest.class
+com\demo\spring\service\TaskServiceTest.class
