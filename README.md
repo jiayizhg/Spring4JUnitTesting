@@ -5,6 +5,7 @@ Table of Contents
 =================
 1. [ Preview of the Full Source Code ](#preview)
 2. [ Automated Unit Testing ](#testing)
+3. [ Sources ](#source)
 
 <a name="preview"></a>
 ## Preview of the Full Source Code 
@@ -54,6 +55,7 @@ Table of Contents
 * *Standalone* configures the controller component under test and execute it in isolation from other controllers. 
 * The controller’s annotations are processed by *Standalone* configuration to carry out the behavior of that controller.
 
+<a name="source"></a>
 ## Sources
 1. “Why Unit Testing?” Why Unit Testing? | Agitar Technologies: Putting Java to the Test, www.agitar.com/solutions/why_unit_testing.html.
 2. Williams, Laurie, et al. On the Effectiveness of Unit Test Automation at Microsoft - IEEE Conference Publication, IEEE, 28 Dec. 2009, ieeexplore.ieee.org/document/5362086.f
