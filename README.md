@@ -3,9 +3,10 @@ A Spring 4 MVC application for task management | Unit testing with JUnit and Moc
 
 Table of Contents
 =================
-1. [ Preview of the Full Source Code ](#preview)
+1. [ Preview of the Full Source Code ](#preview) 
 2. [ Automated Unit Testing ](#testing)
-3. [ Sources ](#source)
+3. [ Test Reports and Code Coverage ](#report)
+4. [ Sources ](#source)
 
 <a name="preview"></a>
 ## Preview of the Full Source Code 
@@ -54,6 +55,15 @@ Table of Contents
 * *MockMvc* container can tests the endpoints with mocked object.
 * *Standalone* configures the controller component under test and execute it in isolation from other controllers. 
 * The controller’s annotations are processed by *Standalone* configuration to carry out the behavior of that controller.
+
+<a name="report"></a>
+## Test Reports and Code Coverage
+### Example of Maven Test Reports
+![alt text](images/TestReport.PNG)
+![alt text](images/TestReportDetails.PNG)
+
+### Example of Code Coverage
+![alt text](images/CodeCoverageReport.PNG)
 
 <a name="source"></a>
 ## Sources
