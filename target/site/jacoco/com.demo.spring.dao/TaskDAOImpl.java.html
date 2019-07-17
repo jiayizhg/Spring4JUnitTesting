@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TaskDAOImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TestingExample</a> &gt; <a href="index.source.html" class="el_package">com.demo.spring.dao</a> &gt; <span class="el_source">TaskDAOImpl.java</span></div><h1>TaskDAOImpl.java</h1><pre class="source lang-java linenums">package com.demo.spring.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.demo.spring.model.Task;
+
+@Repository
+public class TaskDAOImpl implements TaskDAO {
+	
+	@PersistenceContext
+    private EntityManager entityManager;
+
+	private SessionFactory sessionFactory;
+
+<span class="nc" id="L24">	public TaskDAOImpl(SessionFactory sessionFactory) {</span>
+<span class="nc" id="L25">		this.sessionFactory = sessionFactory;</span>
+<span class="nc" id="L26">	}</span>
+	
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory) {
+<span class="nc" id="L30">		this.sessionFactory = sessionFactory;</span>
+<span class="nc" id="L31">	}</span>
+
+	@Override
+	public Task getComment(long taskId) {
+		// TODO Auto-generated method stub
+<span class="nc" id="L36">		return null;</span>
+	}
+
+	@Override
+	public Task getStatus(long taskId) {
+		
+<span class="nc" id="L42">		return null;</span>
+	}
+
+	@Override
+	public Task getStatuscd(long taskId) {
+		// TODO Auto-generated method stub
+<span class="nc" id="L48">		return null;</span>
+	}
+
+	@Override
+	public Task getDate(long taskId) {
+		// TODO Auto-generated method stub
+<span class="nc" id="L54">		return null;</span>
+	}
+
+	@Override
+	public Task getDescription(long taskId) {
+		// TODO Auto-generated method stub
+<span class="nc" id="L60">		return null;</span>
+	}
+
+	@Override
+	public Task getByType(long taskType) {
+<span class="nc" id="L65">		Query query= sessionFactory.getCurrentSession().</span>
+<span class="nc" id="L66">				createQuery(&quot;from task where taskType=:taskType&quot;);</span>
+		
+<span class="nc" id="L68">		query.setParameter(&quot;taskType&quot;, taskType);</span>
+		
+<span class="nc" id="L70">		Task task = (Task) query.uniqueResult();</span>
+
+<span class="nc" id="L72">		return task;</span>
+	}
+
+	@Override
+	public Task getTaskRecordById(long taskId) {
+		
+<span class="nc" id="L78">		Task task = sessionFactory.getCurrentSession().get(Task.class, taskId);</span>
+		
+<span class="nc" id="L80">		return task;</span>
+	}
+
+	@Override
+	public long addNewTask(Task task) {
+<span class="nc" id="L85">		sessionFactory.getCurrentSession().save(task);</span>
+<span class="nc" id="L86">		return task.getTaskId();</span>
+	}
+
+	@Override
+	public List&lt;Task&gt; getAllTasks() {
+		
+<span class="nc" id="L92">		List &lt;Task&gt; list = sessionFactory.getCurrentSession().createQuery(&quot;from task&quot;).list();</span>
+		
+<span class="nc" id="L94">		return list;</span>
+	}
+
+	@Override
+	public Task getTaskByStatusAndId(String taskStatus, long taskId) {
+		
+<span class="nc" id="L100">		Query query= sessionFactory.getCurrentSession().</span>
+<span class="nc" id="L101">				createQuery(&quot;from task where taskStatus=:taskStatus and taskId=:taskId&quot;);</span>
+		
+<span class="nc" id="L103">		query.setParameter(&quot;taskStatus&quot;, taskStatus);</span>
+<span class="nc" id="L104">		query.setParameter(&quot;taskId&quot;, taskId);</span>
+		
+<span class="nc" id="L106">		Task task = (Task) query.uniqueResult();</span>
+
+<span class="nc" id="L108">		return task;</span>
+	}
+
+	@Override
+	public long updateTaskById(long taskId, Task task) {
+		
+<span class="nc" id="L114">		Session session = sessionFactory.getCurrentSession();</span>
+		
+<span class="nc" id="L116">		Task oldTask = session.byId(Task.class).load(taskId);</span>
+		
+<span class="nc bnc" id="L118" title="All 2 branches missed.">		if (oldTask == null)</span>
+<span class="nc" id="L119">			return -1;</span>
+		
+<span class="nc" id="L121">		oldTask.setTaskComment(task.getTaskComment());</span>
+<span class="nc" id="L122">		oldTask.setTaskDescription(task.getTaskDescription());</span>
+<span class="nc" id="L123">		oldTask.setTaskStatus(task.getTaskStatus());</span>
+<span class="nc" id="L124">		oldTask.setTaskStatuscd(task.getTaskStatuscd());</span>
+<span class="nc" id="L125">		oldTask.setTaskType(task.getTaskType());</span>
+		//oldTask.setTaskCreatedt(newTask.getTaskCreatedt());;
+		
+<span class="nc" id="L128">		session.flush();</span>
+<span class="nc" id="L129">		return 0;</span>
+	}
+
+	@Override
+	public void deleteTaskRecordById(long taskId) {
+<span class="nc" id="L134">		Session session = sessionFactory.getCurrentSession();</span>
+<span class="nc" id="L135">		Task task = session.byId(Task.class).load(taskId);</span>
+<span class="nc" id="L136">		session.delete(task);</span>
+		
+<span class="nc" id="L138">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
