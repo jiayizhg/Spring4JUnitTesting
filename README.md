@@ -14,13 +14,13 @@ Table of Contents
 ### Initialize Object Task
 ![alt text](images/TaskDeclarations.PNG)
 
-### Example of the Web Layer
+### An Example of the Web Layer
 ![alt text](images/RestController.PNG)
 
-### Example of the Service Implementation
+### An Example of the Service Implementation
 ![alt text](images/Service.PNG)
 
-### Example of the Repository Implementation
+### An Example of the Repository Implementation
 ![alt text](images/DAO.PNG)
 
 
@@ -59,11 +59,11 @@ Table of Contents
 
 <a name="report"></a>
 ## Test Reports and Code Coverage
-### Example of Maven Test Reports
+### An Example of Maven Test Reports
 ![alt text](images/TestReport.PNG)
 ![alt text](images/TestReportDetails.PNG)
 
-### Example of Code Coverage
+### An Example of Code Coverage
 ![alt text](images/CodeCoverageReport.PNG)
 
 <a name="source"></a>
